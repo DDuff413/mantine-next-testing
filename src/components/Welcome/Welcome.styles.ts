@@ -1,6 +1,10 @@
 import { createStyles } from '@mantine/core';
 
 export default createStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
   title: {
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     fontSize: 100,
