@@ -44,8 +44,8 @@ export default function App(
   );
 }
 
-const getTheme = (page: string) => {
-  switch (page) {
+const getTheme = (theme: string) => {
+  switch (theme) {
     case 'light': {
       return pinkTheme;
     }
@@ -66,5 +66,5 @@ const getTheme = (page: string) => {
 
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie('mantine-color-scheme', ctx) || 'light',
-  theme: getTheme(getCookie('page', ctx) ? (getCookie('page', ctx) as string) : 'default'),
+  theme: getTheme(getCookie('theme', ctx) ? (getCookie('theme', ctx) as string) : 'default'),
 });
