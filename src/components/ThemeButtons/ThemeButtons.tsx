@@ -1,43 +1,39 @@
-import { Anchor, Button, Group } from '@mantine/core';
+import { Button, Group } from '@mantine/core';
 import { setCookie } from 'cookies-next';
 
 export const ThemeButtons = () => (
   <Group spacing={50} grow position="center" px={50} py={10}>
-    <Anchor
-      href="/light"
-      size="lg"
+    <Button
       onClick={() => {
         setCookie('page', 'light', { maxAge: 60 * 60 * 24 * 30 });
+        window.location.reload();
       }}
     >
-      <Button>Light</Button>
-    </Anchor>
-    <Anchor
-      href="/dark"
-      size="lg"
+      Light
+    </Button>
+    <Button
       onClick={() => {
         setCookie('page', 'dark', { maxAge: 60 * 60 * 24 * 30 });
+        window.location.reload();
       }}
     >
-      <Button>Dark</Button>
-    </Anchor>
-    <Anchor
-      href="/red"
-      size="lg"
+      Dark
+    </Button>
+    <Button
       onClick={() => {
         setCookie('page', 'red', { maxAge: 60 * 60 * 24 * 30 });
+        window.location.reload();
       }}
     >
-      <Button>Red</Button>
-    </Anchor>
-    <Anchor
-      href="/purple"
-      size="lg"
+      Red
+    </Button>
+    <Button
       onClick={() => {
         setCookie('page', 'purple', { maxAge: 60 * 60 * 24 * 30 });
+        window.location.reload();
       }}
     >
-      <Button>Purple</Button>
-    </Anchor>
+      Purple
+    </Button>
   </Group>
 );
