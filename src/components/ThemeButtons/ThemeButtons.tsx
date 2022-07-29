@@ -9,7 +9,7 @@ export const ThemeButtons = () => (
         window.location.reload();
       }}
     >
-      Light
+      Pink
     </Button>
     <Button
       onClick={() => {
@@ -17,7 +17,7 @@ export const ThemeButtons = () => (
         window.location.reload();
       }}
     >
-      Dark
+      Green
     </Button>
     <Button
       onClick={() => {
