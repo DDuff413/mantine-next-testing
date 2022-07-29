@@ -1,43 +1,42 @@
 import { GetServerSidePropsContext } from 'next';
 import { useState } from 'react';
 import { AppProps } from 'next/app';
-import { getCookie, setCookie } from 'cookies-next';
-import Head from 'next/head';
-import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
-import { NotificationsProvider } from '@mantine/notifications';
-import { useHotkeys } from '@mantine/hooks';
+import { getCookie } from 'cookies-next';
+import { MantineProvider, MantineThemeOverride } from '@mantine/core';
+import { lightTheme, darkTheme, redTheme, purpleTheme, defaultTheme } from 'utils/themes';
 
-export default function App(props: AppProps & { colorScheme: ColorScheme }) {
+export default function App(props: AppProps & { theme: MantineThemeOverride }) {
   const { Component, pageProps } = props;
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
-
-  const toggleColorScheme = (value?: ColorScheme) => {
-    const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
-    setColorScheme(nextColorScheme);
-    setCookie('mantine-color-scheme', nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
-  };
-
-  useHotkeys([['mod+J', () => toggleColorScheme()]]);
+  const [theme] = useState<MantineThemeOverride>(props.theme);
 
   return (
-    <>
-      <Head>
-        <title>Mantine next example</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link rel="shortcut icon" href="/favicon.svg" />
-      </Head>
-
-      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-          <NotificationsProvider>
-            <Component {...pageProps} />
-          </NotificationsProvider>
-        </MantineProvider>
-      </ColorSchemeProvider>
-    </>
+    <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
+      <Component {...pageProps} />
+    </MantineProvider>
   );
 }
 
+const getTheme = (page: string) => {
+  switch (page) {
+    case 'light': {
+      return lightTheme;
+    }
+    case 'dark': {
+      return darkTheme;
+    }
+    case 'red': {
+      return redTheme;
+    }
+    case 'purple': {
+      return purpleTheme;
+    }
+    default: {
+      return defaultTheme;
+    }
+  }
+};
+
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie('mantine-color-scheme', ctx) || 'light',
+  theme: getTheme(getCookie('page', ctx) ? (getCookie('page', ctx) as string) : 'default'),
 });

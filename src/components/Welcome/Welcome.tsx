@@ -1,4 +1,5 @@
-import { Title, Text, Anchor, Group } from '@mantine/core';
+import { Title, Text, Group } from '@mantine/core';
+import { IncrementButton } from 'components/IncrementButton/IncrementButton';
 import useStyles from 'components/Welcome/Welcome.styles';
 
 export const Welcome = () => {
@@ -15,9 +16,8 @@ export const Welcome = () => {
       <Text color="dimmed" align="center" size="lg" sx={{ maxWidth: 580 }} mx="auto" mt="xl">
         This is a space where I mess around with Mantine things in a mantain/next.js environment.
       </Text>
-      <Anchor href="https://mantine.dev/theming/next/" size="lg">
-        this guide
-      </Anchor>
+      <IncrementButton />
+      <IncrementButton />
     </Group>
   );
 };
