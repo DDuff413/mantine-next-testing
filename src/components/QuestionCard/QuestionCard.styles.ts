@@ -7,7 +7,13 @@ export default createStyles(() => ({
     gap: 20,
     width: 328,
   },
-  level: {},
+  level: { color: '#B7C2C8' },
   description: {},
-  example: {},
+  example: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: 5,
+  },
+  exampleToggle: {},
+  exampleDescription: {},
 }));

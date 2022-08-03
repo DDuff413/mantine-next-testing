@@ -1,15 +1,17 @@
-import { Card, Text, Group } from '@mantine/core';
+import { Group } from '@mantine/core';
 
 import useStyles from 'components/Cards/Cards.styles';
+import { QuestionCard } from 'components/QuestionCard/QuestionCard';
 
 export const Cards = () => {
   const { classes } = useStyles();
 
   return (
-    <Card className={classes.card} shadow="sm" p="lg" radius="md">
-      <Text>Level</Text>
-      <Text>Sample text</Text>
-      <Group>Drop down</Group>
-    </Card>
+    <Group position="center" pt={10}>
+      <QuestionCard />
+      <QuestionCard />
+      <QuestionCard />
+      <QuestionCard />
+    </Group>
   );
 };
