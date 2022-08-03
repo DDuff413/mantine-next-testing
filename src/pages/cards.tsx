@@ -1,18 +1,20 @@
-import { Welcome } from 'components/Welcome/Welcome';
-import { MouseCounter } from 'components/MouseCounter/MouseCounter';
 import { ThemeButtons } from 'components/ThemeButtons/ThemeButtons';
 import { PageContainer } from 'components/PageContainer/PageContainer';
-import { ColorSchemeToggle } from 'components/ColorSchemeToggle/ColorSchemeToggle';
 import { LinkButton } from 'components/LinkButton/LinkButton';
+import { Cards } from 'components/Cards/Cards';
+import { Group } from '@mantine/core';
 
 export default function HomePage() {
   return (
     <PageContainer>
-      <Welcome />
-      <ColorSchemeToggle />
+      <Group position="center" pt={10}>
+        <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
+      </Group>
       <ThemeButtons />
-      <MouseCounter />
-      <LinkButton href="/cards" text="Cards" />
+      <LinkButton href="/" text="Home" />
     </PageContainer>
   );
 }
