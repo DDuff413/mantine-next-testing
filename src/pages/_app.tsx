@@ -10,6 +10,7 @@ import {
 } from '@mantine/core';
 import { pinkTheme, greenTheme, redTheme, purpleTheme, defaultTheme } from 'utils/themes';
 import { useHotkeys } from '@mantine/hooks';
+import { GlobalStyles } from 'styles/Global';
 
 export default function App(
   props: AppProps & { colorScheme: ColorScheme; theme: MantineThemeOverride }
@@ -38,6 +39,7 @@ export default function App(
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
+        <GlobalStyles />
         <Component {...pageProps} />
       </MantineProvider>
     </ColorSchemeProvider>
