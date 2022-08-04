@@ -13,6 +13,7 @@ export default function HomePage() {
       <ThemeButtons />
       <MouseCounter />
       <LinkButton href="/cards" text="Cards" />
+      <LinkButton href="/progress" text="Progress" />
     </PageContainer>
   );
 }

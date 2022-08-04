@@ -3,7 +3,7 @@ import { PageContainer } from 'components/PageContainer/PageContainer';
 import { LinkButton } from 'components/LinkButton/LinkButton';
 import { Cards } from 'components/Cards/Cards';
 
-export default function HomePage() {
+export default function CardsPage() {
   return (
     <PageContainer>
       <Cards />

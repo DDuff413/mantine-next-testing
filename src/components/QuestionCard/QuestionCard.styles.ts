@@ -14,6 +14,5 @@ export default createStyles(() => ({
     alignItems: 'flex-start',
     gap: 5,
   },
-  exampleToggle: {},
-  exampleDescription: {},
+  exampleToggle: { display: 'flex', gap: 8, alignItems: 'center' },
 }));

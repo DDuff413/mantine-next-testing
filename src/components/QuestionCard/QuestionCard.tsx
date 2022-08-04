@@ -1,5 +1,6 @@
 import { Card, Text, Group, UnstyledButton } from '@mantine/core';
 import { useState } from 'react';
+import { EyeClosedIcon, EyeOpenIcon } from '@modulz/radix-icons';
 
 import useStyles from 'components/QuestionCard/QuestionCard.styles';
 
@@ -18,16 +19,15 @@ export const QuestionCard = () => {
       </Text>
       <Group className={classes.example}>
         <UnstyledButton
+          className={classes.exampleToggle}
           onClick={() => {
             setExpandExample(!expandExample);
           }}
         >
-          <Text className={classes.exampleToggle} size="md">
-            Drop down button
-          </Text>
+          {expandExample ? <EyeOpenIcon /> : <EyeClosedIcon />}
+          <Text size="md">Drop down button</Text>
         </UnstyledButton>
         <Text
-          className={classes.exampleDescription}
           size="md"
           sx={{
             display: expandExample ? 'block' : 'none',
