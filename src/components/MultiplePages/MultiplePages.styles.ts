@@ -5,5 +5,5 @@ export default createStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  barContainer: { width: 600 },
+  barContainer: { width: '80%' },
 }));
