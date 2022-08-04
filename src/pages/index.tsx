@@ -14,6 +14,7 @@ export default function HomePage() {
       <MouseCounter />
       <LinkButton href="/cards" text="Cards" />
       <LinkButton href="/progress" text="Progress" />
+      <LinkButton href="/pagination" text="Pagination" />
     </PageContainer>
   );
 }
