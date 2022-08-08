@@ -5,11 +5,13 @@ import useStyles from 'components/MultiplePages/MultiplePages.styles';
 import { Cards } from 'components/Cards/Cards';
 import { ProgressBar } from 'components/ProgressBar/ProgressBar';
 import { ResultBar } from 'components/ResultBar/ResultBar';
+import { ResultsDashboard } from 'components/ResultsDashboard/ResultsDashboard';
 
 export const MultiplePages: React.FC = () => {
   const { classes } = useStyles();
 
   const [activePage, setActivePage] = useState(1);
+  const numPages = 4;
 
   const previousPage = () => {
     if (activePage > 1) {
@@ -18,7 +20,7 @@ export const MultiplePages: React.FC = () => {
   };
 
   const nextPage = () => {
-    if (activePage < 3) {
+    if (activePage < numPages) {
       setActivePage(activePage + 1);
     }
   };
@@ -40,6 +42,13 @@ export const MultiplePages: React.FC = () => {
       pageContent = (
         <Container pt={20} className={classes.barContainer}>
           <ResultBar result={50} mark={60} />
+        </Container>
+      );
+      break;
+    case 4:
+      pageContent = (
+        <Container pt={20} className={classes.barContainer}>
+          <ResultsDashboard />
         </Container>
       );
       break;
@@ -65,7 +74,7 @@ export const MultiplePages: React.FC = () => {
         </Button>
       </Group>
       <Pagination
-        total={3}
+        total={numPages}
         withControls={false}
         page={activePage}
         onChange={setActivePage}

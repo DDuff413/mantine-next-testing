@@ -3,7 +3,7 @@ import { Global, useMantineTheme } from '@mantine/core';
 export const GlobalStyles = () => {
   const mantineTheme = useMantineTheme();
 
-  const bgColor = mantineTheme.colors[mantineTheme.primaryColor][9];
+  const bgColor = mantineTheme.colors.dark[5];
 
   return (
     <Global
