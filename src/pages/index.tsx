@@ -16,6 +16,7 @@ export default function HomePage() {
       <LinkButton href="/progress" text="Progress" />
       <LinkButton href="/pagination" text="Pagination" />
       <LinkButton href="/results" text="Results" />
+      <LinkButton href="/multiselect" text="MultiSelect" />
     </PageContainer>
   );
 }
