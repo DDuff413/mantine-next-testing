@@ -22,6 +22,7 @@ export const ResultBar: React.FC<ResultBarProps> = (props) => {
       marks={levels}
       sx={{
         ':hover': { cursor: 'default' },
+        width: '90%',
       }}
       styles={(theme) => ({
         track: {

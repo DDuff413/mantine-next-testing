@@ -1,4 +1,4 @@
-import { Card, Text, Group, UnstyledButton } from '@mantine/core';
+import { Card, Text, Group, UnstyledButton, Collapse } from '@mantine/core';
 import { useState } from 'react';
 import { EyeClosedIcon, EyeOpenIcon } from '@modulz/radix-icons';
 
@@ -27,14 +27,7 @@ export const QuestionCard = () => {
           {expandExample ? <EyeOpenIcon /> : <EyeClosedIcon />}
           <Text size="md">Drop down button</Text>
         </UnstyledButton>
-        <Text
-          size="md"
-          sx={{
-            display: expandExample ? 'block' : 'none',
-          }}
-        >
-          Drop down text
-        </Text>
+        <Collapse in={expandExample}>Drop down text</Collapse>
       </Group>
     </Card>
   );
