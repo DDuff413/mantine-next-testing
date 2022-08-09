@@ -6,4 +6,9 @@ export default createStyles(() => ({
     flexDirection: 'column',
   },
   barContainer: { width: '80%' },
+  barPaper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
 }));

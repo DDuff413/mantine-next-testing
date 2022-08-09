@@ -1,4 +1,13 @@
-import { Button, Container, Divider, Group, NumberInput, Pagination, Text } from '@mantine/core';
+import {
+  Button,
+  Container,
+  Divider,
+  Group,
+  NumberInput,
+  Pagination,
+  Text,
+  Paper,
+} from '@mantine/core';
 import { useState } from 'react';
 
 import useStyles from 'components/MultiplePages/MultiplePages.styles';
@@ -36,30 +45,34 @@ export const MultiplePages: React.FC = () => {
     case 2:
       pageContent = (
         <Container pt={20} className={classes.barContainer}>
-          <NumberInput
-            defaultValue={progress}
-            placeholder="Progress value"
-            label="Progress Value"
-            onChange={(value) => {
-              setProgress(value || 0);
-            }}
-          />
-          <ProgressBar progress={progress} />
+          <Paper shadow="xs" p="md">
+            <NumberInput
+              defaultValue={progress}
+              placeholder="Progress value"
+              label="Progress Value"
+              onChange={(value) => {
+                setProgress(value || 0);
+              }}
+            />
+            <ProgressBar progress={progress} />
+          </Paper>
         </Container>
       );
       break;
     case 3:
       pageContent = (
         <Container pt={20} className={classes.barContainer}>
-          <NumberInput
-            defaultValue={progress}
-            placeholder="Result value"
-            label="Result Value"
-            onChange={(value) => {
-              setProgress(value || 0);
-            }}
-          />
-          <ResultBar result={progress} mark={60} />
+          <Paper className={classes.barPaper} shadow="xs" p="md">
+            <NumberInput
+              defaultValue={progress}
+              placeholder="Result value"
+              label="Result Value"
+              onChange={(value) => {
+                setProgress(value || 0);
+              }}
+            />
+            <ResultBar result={progress} mark={60} />
+          </Paper>
         </Container>
       );
       break;
