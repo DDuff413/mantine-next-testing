@@ -30,8 +30,8 @@ export const SelectionOption: React.FC<SelectionOptionProps> = (props) => {
       }}
     >
       <Group className={classes.heading}>
-        {props.isActive && <CheckCircledIcon />}
         <Text>{props.title}</Text>
+        {props.isActive && <CheckCircledIcon />}
       </Group>
       <Text>{props.descrption}</Text>
     </Card>
