@@ -28,7 +28,6 @@ export const ResultBar: React.FC<ResultBarProps> = (props) => {
       }}
       styles={(theme) => ({
         track: {
-          backgroundColor: 'red',
           borderRadius: 0,
           height: 18,
           marginRight: 0,
