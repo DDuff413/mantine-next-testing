@@ -6,7 +6,7 @@ import { MultiSelect } from 'components/MultiSelect/MultiSelect';
 export default function PaginationsPage() {
   return (
     <PageContainer>
-      <MultiSelect />
+      <MultiSelect isMultiSelect />
       <ThemeButtons />
       <LinkButton href="/" text="Home" />
     </PageContainer>

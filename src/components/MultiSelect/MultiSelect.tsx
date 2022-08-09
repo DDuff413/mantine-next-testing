@@ -4,7 +4,11 @@ import { Group } from '@mantine/core';
 import useStyles from 'components/MultiSelect/MultiSelect.styles';
 import { SelectionOption } from 'components/SelectionOption/SelectionOption';
 
-export const MultiSelect = () => {
+export interface MultiSelectProps {
+  isMultiSelect: boolean;
+}
+
+export const MultiSelect: React.FC<MultiSelectProps> = (props) => {
   const { classes } = useStyles();
 
   const [selectedCards, setSelectedCards] = useState(new Set<string>());
@@ -18,9 +22,13 @@ export const MultiSelect = () => {
 
   const handleCardSelected = (option: string) => {
     if (selectedCards.delete(option)) {
-      setSelectedCards(new Set([...selectedCards]));
+      props.isMultiSelect
+        ? setSelectedCards(new Set([...selectedCards]))
+        : setSelectedCards(new Set([]));
     } else {
-      setSelectedCards(new Set([option, ...selectedCards]));
+      props.isMultiSelect
+        ? setSelectedCards(new Set([option, ...selectedCards]))
+        : setSelectedCards(new Set([option]));
     }
   };
 

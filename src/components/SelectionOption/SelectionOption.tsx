@@ -22,7 +22,7 @@ export const SelectionOption: React.FC<SelectionOptionProps> = (props) => {
       sx={(theme) => ({
         border: '3px solid',
         borderColor: props.isActive
-          ? theme.colors[theme.primaryColor][6]
+          ? theme.colors[theme.primaryColor][4]
           : theme.colors[theme.primaryColor][0],
       })}
       onClick={() => {
