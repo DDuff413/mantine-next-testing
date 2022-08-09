@@ -1,5 +1,5 @@
-import { Card, Text } from '@mantine/core';
-import { CheckCircledIcon, CrossCircledIcon } from '@modulz/radix-icons';
+import { Card, Group, Text } from '@mantine/core';
+import { CheckCircledIcon } from '@modulz/radix-icons';
 
 import useStyles from 'components/SelectionOption/SelectionOption.styles';
 
@@ -29,8 +29,10 @@ export const SelectionOption: React.FC<SelectionOptionProps> = (props) => {
         props.onClick(props.title);
       }}
     >
-      {props.isActive ? <CheckCircledIcon /> : <CrossCircledIcon />}
-      <Text>{props.title}</Text>
+      <Group className={classes.heading}>
+        {props.isActive && <CheckCircledIcon />}
+        <Text>{props.title}</Text>
+      </Group>
       <Text>{props.descrption}</Text>
     </Card>
   );

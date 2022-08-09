@@ -1,5 +1,6 @@
 import { createStyles } from '@mantine/core';
 
 export default createStyles(() => ({
-  card: {},
+  card: { display: 'flex', flexDirection: 'column' },
+  heading: { justifyContent: 'flex-end' },
 }));
