@@ -17,6 +17,7 @@ export default function HomePage() {
       <LinkButton href="/pagination" text="Pagination" />
       <LinkButton href="/results" text="Results" />
       <LinkButton href="/multiselect" text="MultiSelect" />
+      <LinkButton href="/topic" text="Topic Card" />
     </PageContainer>
   );
 }
