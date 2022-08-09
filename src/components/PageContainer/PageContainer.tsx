@@ -1,7 +1,9 @@
 import { Container } from '@mantine/core';
 import Head from 'next/head';
 import { ReactNode } from 'react';
+
 import useStyles from 'components/PageContainer/PageContainer.styles';
+import { TopNavbar } from 'components/TopNavbar/TopNavbar';
 
 export interface PageContainerProps {
   children?: ReactNode;
@@ -18,6 +20,7 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
         <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
 
+      <TopNavbar />
       <Container className={classes.container}>{props.children}</Container>
     </>
   );

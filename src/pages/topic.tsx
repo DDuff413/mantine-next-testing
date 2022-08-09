@@ -1,6 +1,5 @@
 import { ThemeButtons } from 'components/ThemeButtons/ThemeButtons';
 import { PageContainer } from 'components/PageContainer/PageContainer';
-import { LinkButton } from 'components/LinkButton/LinkButton';
 import { TopicCard } from 'components/TopicCard/TopicCard';
 
 export default function ResultsPage() {
@@ -14,7 +13,6 @@ export default function ResultsPage() {
       <TopicCard topic="The Sky" icon="sky" progress={90} />
       <TopicCard topic="The Sun" icon="sun" progress={100} />
       <ThemeButtons />
-      <LinkButton href="/" text="Home" />
     </PageContainer>
   );
 }
