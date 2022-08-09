@@ -1,4 +1,4 @@
-import { Button, Container, Divider, Group, Pagination } from '@mantine/core';
+import { Button, Container, Divider, Group, Pagination, Text } from '@mantine/core';
 import { useState } from 'react';
 
 import useStyles from 'components/MultiplePages/MultiplePages.styles';
@@ -56,8 +56,10 @@ export const MultiplePages: React.FC = () => {
     case 5:
       pageContent = (
         <Container pt={20} className={classes.barContainer}>
+          <Text>MultiSelect</Text>
           <MultiSelect isMultiSelect />
           <Divider my="md" />
+          <Text>SingleSelect</Text>
           <MultiSelect isMultiSelect={false} />
         </Container>
       );
