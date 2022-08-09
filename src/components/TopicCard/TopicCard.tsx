@@ -55,7 +55,7 @@ export const TopicCard: React.FC<TopicCardProps> = (props) => {
               left: '0% !important',
               width: `${props.progress}% !important`,
             },
-            thumb: { display: 'none', borderRadius: 0 },
+            thumb: { display: 'none' },
           })}
         />
       </Card.Section>
