@@ -20,6 +20,7 @@ export const ResultBar: React.FC<ResultBarProps> = (props) => {
       value={props.result}
       label={(value) => `${value}%`}
       marks={levels}
+      py="lg"
       sx={{
         ':hover': { cursor: 'default' },
         width: '90%',

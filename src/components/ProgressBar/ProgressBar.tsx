@@ -5,5 +5,5 @@ export interface ProgressBarProps {
 }
 
 export const ProgressBar: React.FC<ProgressBarProps> = (props) => (
-  <Slider min={0} max={100} value={props.progress} styles={{ thumb: { height: 0 } }} />
+  <Slider min={0} max={100} value={props.progress} py="lg" styles={{ thumb: { height: 0 } }} />
 );

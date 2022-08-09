@@ -1,13 +1,7 @@
 import { createStyles } from '@mantine/core';
 
 export default createStyles(() => ({
-  card: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 20,
-    width: 328,
+  group: {
+    alignItems: 'flex-start',
   },
-  level: {},
-  description: {},
-  example: {},
 }));

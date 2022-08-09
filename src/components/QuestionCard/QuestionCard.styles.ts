@@ -5,7 +5,7 @@ export default createStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     gap: 20,
-    width: 328,
+    width: '23%',
   },
   level: { color: '#B7C2C8' },
   description: {},
